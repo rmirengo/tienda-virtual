@@ -1,0 +1,70 @@
+/* Estilos del contenedor principal del header */
+.header {
+    width: 100%;
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    
+    /* 1. Habilita Flexbox */
+    display: flex;
+    
+    /* 2. Coloca los dos elementos (Logo y Contenedor de Texto) a los extremos */
+    justify-content: space-between;
+    
+    /* 3. Centra verticalmente los dos elementos (Logo y Contenedor) */
+    align-items: center; 
+}
+
+/* Estilos para el logo (la imagen) */
+.header__logo {
+    height: 200px; 
+    width: auto; 
+    /* Agregamos el margen a la derecha para separarlo del texto */
+    margin-right: 20px; 
+    flex-shrink: 0; /* Evita que el logo se haga más pequeño */
+}
+
+/* 🏆 Estilos para el NUEVO contenedor de texto */
+.header__text-container {
+    /* El contenedor ocupará el espacio restante a la derecha del logo */
+    flex-grow: 1; 
+    /* Por defecto, los hijos (h1 y p) se apilan, logrando tu objetivo. */
+}
+
+/* Estilos del texto interno */
+.header h1 {
+    font-size: 1.8em;
+    margin: 0; 
+}
+
+.header p {
+    font-size: 1em;
+    margin: 5px 0 0 0; /* Espacio entre H1 y P */
+}
+
+
+/* 📱 Media Query para Responsividad */
+@media (max-width: 600px) {
+    .header {
+        flex-direction: column; /* Apila todo verticalmente */
+        align-items: center;
+        padding: 15px 10px;
+        text-align: center; 
+    }
+
+    .header__logo {
+        margin-right: 0;
+        margin-bottom: 10px; 
+        height: 40px; 
+    }
+
+    .header__text-container {
+        /* Centra el contenedor de texto en el modo apilado */
+        align-items: center;
+    }
+
+    .header h1 {
+        font-size: 1.4em;
+    }
+}

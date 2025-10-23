@@ -1,0 +1,59 @@
+/* ==================================== */
+/* 1. Reset Básico (opcional pero recomendado) */
+/* ==================================== */
+
+/* Ajusta el modelo de caja globalmente para facilitar el layout */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Elimina el margen por defecto en el body */
+body {
+  margin: 0;
+  min-height: 100vh; /* Asegura que el body ocupe al menos toda la altura de la ventana */
+  font-family: Arial, sans-serif; /* Puedes cambiar la fuente si lo deseas */
+  background-color: #f4f4f4; /* Fondo claro para el cuerpo del sitio */
+  color: #213547; /* Color de texto por defecto */
+}
+
+/* ==================================== */
+/* 2. Estilo para el contenedor principal de React (#root o .app-container) */
+/* ==================================== */
+
+/* Este es el contenedor que Vite crea por defecto */
+#root {
+  /* Eliminamos el 'max-width' y el 'text-align: center' */
+  max-width: none; 
+  margin: 0;
+  padding: 0; 
+  text-align: left; /* Alineación estándar del contenido */
+  
+  /* Puedes usar una clase en App.jsx si no quieres usar el ID #root,
+     por ejemplo, si envuelves todo en <div className="app-container"> */
+}
+
+/* Si usaste <div className="app-container"> en App.jsx */
+.app-container {
+    /* Mismos estilos que #root para asegurar que ocupe todo */
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column; /* Esto es útil para que el footer se quede abajo */
+}
+
+
+/* ==================================== */
+/* 3. Estilos Limpiados (se eliminaron los estilos de .logo y .card) */
+/* ==================================== */
+
+/* Puedes mantener este si lo usas en tu main.jsx */
+.card {
+  padding: 2em;
+}
+
+/* Estilo para enlaces (si los usas) */
+.read-the-docs {
+  color: #888;
+}

@@ -1,0 +1,25 @@
+/* src/ItemListContainer/ItemListContainer.css */
+
+.item-list-container {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto; /* Centra el contenedor en la página */
+    min-height: 70vh; /* Asegura que tenga altura mínima */
+}
+
+.item-list-container h2 {
+    font-size: 2.5em;
+    color: #333;
+    text-align: center;
+    margin-bottom: 30px;
+    border-bottom: 3px solid #646cff; /* Línea de color de marca */
+    padding-bottom: 10px;
+}
+
+/* Estilo para el mensaje de carga o vacío */
+.loading-message {
+    text-align: center;
+    font-size: 1.5em;
+    color: #888;
+    padding: 50px 0;
+}

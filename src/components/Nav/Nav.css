@@ -1,0 +1,59 @@
+/* Contenedor principal de la navegación */
+.navbar {
+    width: 100%;
+    background-color: #444; 
+    padding: 10px 0; 
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* La lista no ordenada (<ul>) */
+.nav__list {
+    display: flex; 
+    justify-content: center; 
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Cada ítem de la lista (<li>) */
+.nav__item {
+    margin: 0 15px; 
+}
+
+/* El enlace (<a>) */
+.nav__link {
+    color: white; 
+    text-decoration: none; 
+    font-size: 1em;
+    font-weight: 500;
+    padding: 5px 0; 
+    transition: color 0.2s ease;
+}
+
+/* Efecto hover */
+.nav__link:hover {
+    color: #64c9ff; 
+}
+
+/* 📱 Media Query para Responsividad (Móviles) */
+@media (max-width: 768px) {
+    .nav__list {
+        flex-direction: column; 
+        align-items: center; 
+    }
+    
+    .nav__item {
+        margin: 5px 0; 
+        width: 100%; 
+        text-align: center;
+    }
+    
+    .nav__link {
+        display: block; 
+        padding: 8px 10px;
+    }
+    
+    .nav__link:hover {
+        background-color: #555; 
+    }
+}

@@ -1,0 +1,32 @@
+/* Ejemplo de estilos para una Card de Producto */
+.product-card {
+    /* Define el ancho y el padding, sabiendo que el border-box lo manejará */
+    width: 300px;
+    padding: 15px;
+    margin: 15px; /* Espacio alrededor de la card */
+    
+    /* Estilos visuales */
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    
+    /* Estilos para el layout de la tienda (si usas grid o flex para las columnas) */
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    text-align: center;
+}
+
+.product-card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.product-card button {
+    /* Adaptación del botón para que se vea bien en la card */
+    width: 90%;
+    margin-top: 10px;
+}

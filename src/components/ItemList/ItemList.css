@@ -1,0 +1,42 @@
+/* src/ItemList/ItemList.css */
+
+.products-grid {
+    /* Usamos Grid para crear un diseño de columnas responsivo */
+    display: grid;
+    
+    /* Por defecto, mostramos 4 columnas en pantallas grandes */
+    grid-template-columns: repeat(4, 1fr); 
+    
+    gap: 30px; /* Espacio entre las tarjetas */
+    padding: 10px 0;
+}
+
+/* El enlace que envuelve cada tarjeta */
+.item-link {
+    text-decoration: none; /* Quitamos el subrayado del enlace */
+    color: inherit; /* Hereda el color del texto para no ser azul */
+}
+
+/* 📱 Media Queries para Responsividad */
+
+/* Tablets grandes y Laptops pequeñas */
+@media (max-width: 1200px) {
+    .products-grid {
+        grid-template-columns: repeat(3, 1fr); /* 3 columnas */
+    }
+}
+
+/* Tablets (vertical) */
+@media (max-width: 768px) {
+    .products-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columnas */
+        gap: 20px;
+    }
+}
+
+/* Móviles */
+@media (max-width: 480px) {
+    .products-grid {
+        grid-template-columns: 1fr; /* 1 columna */
+    }
+}

@@ -1,0 +1,44 @@
+/* Estilos del contenedor principal del footer */
+.footer {
+    /* Mismos colores y caja que el header */
+    width: 100%;
+    background-color: #333; 
+    color: white; 
+    padding: 20px 0; /* Un poco menos de padding vertical que el header */
+    
+    /* Posicionamiento y diseño */
+    text-align: center; /* Centra todo el contenido */
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.2); /* Sombra hacia arriba */
+    
+    /* Para asegurar que se pegue al fondo si tienes poco contenido */
+    /* position: fixed; 
+    bottom: 0; 
+    left: 0; */
+}
+
+/* Contenedor interno para manejar el espaciado si es necesario */
+.footer__content {
+    /* Limita el ancho si es necesario, pero centrado */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Estilos para los párrafos de texto */
+.footer p {
+    font-size: 0.9em; /* Un poco más pequeño que el texto del header */
+    line-height: 1.5; /* Espaciado entre líneas para mejor lectura */
+    margin: 3px 0; /* Pequeño margen entre las líneas de texto */
+    padding: 0 10px; /* Padding horizontal para evitar que el texto toque los bordes en móviles */
+}
+
+/* 📱 Media Query para Responsividad */
+/* Aunque el footer es simple, aseguramos un buen espaciado en móviles */
+@media (max-width: 600px) {
+    .footer {
+        padding: 15px 10px; /* Ajuste de padding para pantallas pequeñas */
+    }
+
+    .footer p {
+        font-size: 0.8em; /* Texto un poco más pequeño en móviles */
+    }
+}
