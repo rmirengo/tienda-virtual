@@ -1,0 +1,9 @@
+
+.item-detail-container {
+    display: flex;
+    justify-content: center; /* Centra el contenido horizontalmente */
+    align-items: flex-start; /* Alinea el contenido arriba */
+    padding: 40px 20px;
+    min-height: 80vh; 
+    background-color: #ecf0f1; /* Un fondo diferente para la vista de detalle */
+}

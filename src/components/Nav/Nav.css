@@ -35,6 +35,55 @@
     color: #64c9ff; 
 }
 
+/* Estilos para el Badge del Carrito */
+
+/* 1. Prepara el contenedor del ítem del carrito (li) para posicionamiento */
+.nav__item {
+    /* Mantenemos el margen existente */
+    margin: 0 15px; 
+    
+    /* Clave: Permite posicionar el badge de forma absoluta dentro del <li> */
+    position: relative; 
+    
+    /* Alineación vertical del enlace y el badge */
+    display: flex;
+    align-items: center;
+}
+
+/* 2. Estilo visual del contador (badge) */
+.cart-badge {
+    /* Apariencia de la burbuja */
+    background-color: #e74c3c; /* Rojo vibrante para llamar la atención */
+    color: white;
+    font-size: 0.75em;
+    font-weight: 700;
+    
+    /* Forma circular */
+    border-radius: 50%;
+    padding: 2px 6px;
+    
+    /* Posicionamiento */
+    position: absolute;
+    top: 5px; /* Ajusta la posición verticalmente */
+    right: -10px; /* Desplaza el badge hacia la derecha del enlace */
+    
+    /* Asegura que siempre se vea encima de todo */
+    z-index: 10; 
+    
+    /* Estilos de transición */
+    transition: transform 0.2s ease;
+}
+
+/* Pequeño efecto al hacer hover sobre el enlace del carrito */
+.nav__item:hover .cart-badge {
+    transform: scale(1.1); /* Hace que la burbuja se agrande un poco */
+}
+
+/* Ajuste de padding al enlace del carrito para que el badge no lo tape */
+.nav__item:last-child .nav__link {
+    padding-right: 20px; /* Agrega espacio a la derecha del enlace del carrito */
+}
+
 /* 📱 Media Query para Responsividad (Móviles) */
 @media (max-width: 768px) {
     .nav__list {

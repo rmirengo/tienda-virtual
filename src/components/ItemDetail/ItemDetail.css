@@ -1,0 +1,52 @@
+/* ItemDetail.css - Estilos específicos para el botón en la vista de detalle */
+
+/* Estilo base del botón */
+.item-detail-wrapper button {
+    /* Dimensiones y espaciado */
+    padding: 15px 30px; 
+    width: 100%; /* El botón ocupa todo el ancho disponible */
+    max-width: 350px; /* Limita el ancho máximo para que no se vea gigante */
+    align-self: flex-start; /* Alinea el botón a la izquierda si el padre es flex */
+    
+    /* Apariencia */
+    background-color: #3498db; /* Azul primario para la acción principal */
+    color: white;
+    border: none;
+    border-radius: 8px; /* Bordes suaves */
+    font-size: 1.2em;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
+    
+    /* Transición suave para el hover */
+    transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+/* Efecto al pasar el mouse (Hover) */
+.item-detail-wrapper button:hover {
+    background-color: #2980b9; /* Azul más oscuro */
+    transform: translateY(-2px); /* Pequeño levantamiento */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Efecto al hacer clic (Active) */
+.item-detail-wrapper button:active {
+    transform: translateY(0); /* Vuelve a la posición normal */
+    background-color: #2c3e50; /* Color muy oscuro para el feedback de clic */
+}
+
+/* Estilo para el botón personalizado */
+.custom-button {
+    background-color: #4CAF50; /* Color de fondo */
+    color: white; /* Color del texto */
+    padding: 10px 20px; /* Espaciado interno */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Cambia el cursor al pasar el mouse */
+    font-size: 16px; /* Tamaño de fuente */
+}
+
+/* Efecto al pasar el mouse (Hover) para el botón personalizado */
+.custom-button:hover {
+    background-color: #45a049; /* Color de fondo al pasar el mouse */
+}

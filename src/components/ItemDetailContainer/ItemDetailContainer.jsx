@@ -1,9 +1,11 @@
 import { useState, useEffect} from 'react'
 import { useParams } from 'react-router-dom';
 import { ItemDetail } from '../ItemDetail/ItemDetail';
+import './ItemDetailContainer.css';
 
 export const ItemDetailContainer = () => {
     const [detail, setDetail] = useState({});
+    
     const { id } = useParams();
 
     useEffect(() =>{
@@ -15,11 +17,11 @@ export const ItemDetailContainer = () => {
             return res.json();
         })
         .then((data)=>{
-            const found = data.find(prod => prod.id === id)
+            const found = data.find(prod => String(prod.id) === String(id))
             if (found) {
                 setDetail(found);
             }else{
-                throw new Error (`Producto con UD ${id} encontrado`);
+                throw new Error (`Producto con id ${id} encontrado`);
             }
         })
         .catch((err)=>{
@@ -28,7 +30,7 @@ export const ItemDetailContainer = () => {
     },[id]);
 
     return (
-    <main>   
+    <main className='item-detail-container'>   
         {Object.keys(detail).length ? (
             <ItemDetail detail={detail} />
         ) : (
