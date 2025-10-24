@@ -2,7 +2,7 @@
   {
     "id": 1,
     "name": "Taza React JS",
-    "price": 12.99,
+    "price": 800,
     "category": "Accesorios",
     "description": "Una taza de cerámica de alta calidad con el logo de React. Ideal para tu café matutino mientras codificas.",
     "imageUrl": "/images/taza-react-js.png"
@@ -10,15 +10,15 @@
   {
     "id": 2,
     "name": "Libro 'Aprende JavaScript desde Cero'",
-    "price": 29.50,
+    "price": 2500,
     "category": "Libros",
     "description": "Guía completa para dominar los fundamentos de JavaScript. Edición 2024.",
     "imageUrl": "/images/libro-aprender-javascript.png"
   },
   {
     "id": 3,
-    "name": "Camiseta 'Code & Coffee'",
-    "price": 19.99,
+    "name": "Remera 'Code & Coffee'",
+    "price": 23000,
     "category": "Ropa",
     "description": "Camiseta de algodón con un diseño minimalista. Disponible en varias tallas.",
     "imageUrl": "/images/remera-code-coffee.png"
@@ -26,7 +26,7 @@
   {
     "id": 4,
     "name": "Licencia IDE Pro (1 Año)",
-    "price": 99.00,
+    "price": 15000,
     "category": "Software",
     "description": "Licencia anual para tu Entorno de Desarrollo Integrado (IDE) favorito. Productividad al máximo.",
     "imageUrl": "/images/licencia-ide-pro-anual.png"
@@ -34,7 +34,7 @@
   {
     "id": 5,
     "name": "Mouse Pad Ergonómico XL",
-    "price": 15.75,
+    "price": 3800,
     "category": "Accesorios",
     "description": "Mouse pad extragrande con soporte de muñeca para largas sesiones de codificación.",
     "imageUrl": "/images/mouse-pad-ergonomico-xl.png"
