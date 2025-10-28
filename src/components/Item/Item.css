@@ -14,9 +14,9 @@
 }
 
 .product-item:hover {
-    /* Efecto hover profesional */
+    /* Efecto hover con sombra más fuerte */
     transform: translateY(-5px); 
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); 
 }
 
 .product-item img {
@@ -30,7 +30,7 @@
 }
 
 .product-title {
-    font-size: 1.1em;
+    font-size: 1.5em;
     font-weight: 600;
     color: #213547;
     margin: 5px 0 10px;
@@ -40,7 +40,7 @@
 .product-price {
     font-size: 1.4em;
     font-weight: bold;
-    color: #646cff; /* Color de marca o acento */
-    margin-top: auto; /* Empuja el precio hacia abajo si hay espacio extra */
+    color: #3498db; /* Nuevo color de acento */
+    margin-top: auto; 
     margin-bottom: 0;
 }

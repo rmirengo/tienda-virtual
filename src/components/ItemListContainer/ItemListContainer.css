@@ -1,25 +1,40 @@
-/* src/ItemListContainer/ItemListContainer.css */
+/* src/ItemListContainer/ItemListContainer.css - ESTILOS ACTUALIZADOS */
 
 .item-list-container {
+    /* Mantenemos el espaciado y centrado, esto es perfecto */
     padding: 40px 20px;
     max-width: 1200px;
-    margin: 0 auto; /* Centra el contenedor en la página */
-    min-height: 70vh; /* Asegura que tenga altura mínima */
+    margin: 0 auto; 
+    min-height: 70vh; 
+    /* Fondo ligeramente diferente al del body (#f4f4f4) para profundidad */
+    background-color: #ffffff; 
+    border-radius: 8px; /* Borde sutil */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05); /* Sombra muy suave */
 }
 
 .item-list-container h2 {
-    font-size: 2.5em;
-    color: #333;
+    font-size: 2em; /* Ligeramente más pequeño para no ser tan dominante */
+    font-weight: 700;
+    /* Nuevo: Color de texto oscuro para el título */
+    color: #2c3e50; 
     text-align: center;
     margin-bottom: 30px;
-    border-bottom: 3px solid #646cff; /* Línea de color de marca */
+    
+    /* Nuevo: Línea de color de acento */
+    border-bottom: 3px solid #3498db; 
     padding-bottom: 10px;
+    
+    /* Pequeña separación del borde de la línea */
+    display: inline-block;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 /* Estilo para el mensaje de carga o vacío */
 .loading-message {
     text-align: center;
     font-size: 1.5em;
-    color: #888;
+    /* Nuevo: Color de texto suave */
+    color: #7f8c8d; 
     padding: 50px 0;
 }
