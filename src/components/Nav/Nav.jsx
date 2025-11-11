@@ -28,7 +28,7 @@ export const Nav = () => {
                     <Link to="/what" className="nav__link">Contacto</Link> 
                 </li>
                  <li className="nav__item">                    
-                    <Link to="/cart" className="nav__link">Carrito</Link>
+                    <Link to="/carrito" className="nav__link">Carrito</Link>
                     {getTotalItems() > 0 && (
                         <span className="cart-badge">{getTotalItems()}</span>
                     )}

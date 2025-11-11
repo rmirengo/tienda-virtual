@@ -13,7 +13,7 @@
 }
 
 .item-list-container h2 {
-    font-size: 2em; /* Ligeramente más pequeño para no ser tan dominante */
+    font-size: em; /* Ligeramente más pequeño para no ser tan dominante */
     font-weight: 700;
     /* Nuevo: Color de texto oscuro para el título */
     color: #2c3e50; 

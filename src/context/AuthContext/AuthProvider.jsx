@@ -1,0 +1,29 @@
+// import { useState} from "react"
+
+// export const AuthProvider = ({children}) => {
+//     const [user, setUser] = useState(()=>{
+//         const saved = sessionStorage.getItem("session")
+//         if(Saved){
+//             return JSON.parse(saved);
+//         }
+
+//         return null;
+//     })
+
+// const login (name, password) => {
+//     if(name === "admin" && password === "1234")
+//         const session = {name};
+//         setUser(session)
+//         sessionStorage.setItem("session", JSON.stringify(session));
+//         return true;
+//     }
+//     return false; 
+
+// }
+
+// const values = {user, login};
+// return(
+//     <AuthContext.Provider value={{user, login }}>
+//         {children}
+//     </AuthContext.Provider>
+// )
