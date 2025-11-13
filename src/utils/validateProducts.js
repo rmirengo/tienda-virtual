@@ -1,13 +1,37 @@
-export const ValidateProduct = (product, fileRequired = true) => {
-    const errors = {};
+//funcion para validar los datos que se cargan en el formulario de carga de productos
 
-    if (!product.name || product.name.trim() === "") {
+export const ValidateProduct = (product, fileRequired=true) => {
+    const errors = {} 
+
+    // 1. Validacion del nombre
+    // trim() y comprobacion de valor falsy
+    if (!product.name || String(product.name).trim() === "") {
         errors.name = "El nombre del producto es obligatorio.";
     }
-    if (!product.description || product.description.trim() === "") {
-        errors.description = "La descripción del producto es obligatoria.";
-    }
-    if product.price == null || isNaN(product.price) || product.price <= 0) {
+    
+    // 2. Validacion del Precio
+    // Valida valor nulo, sin definir y luego el valor numerico
+    if (product.price === null || product.price === undefined || isNaN(product.price) || product.price <= 0) {
         errors.price = "El precio del producto debe ser un número positivo.";
     }
-    if product.category
+
+    // 3. Validacion de la descripción
+    
+    if (!product.description || String(product.description).trim() === "") {
+        errors.description = "La descripción del producto es obligatoria.";
+    }
+    
+    // 4. Validacion de la categoría
+    
+    if (!product.category ||String(product.category).trim()===""){
+        errors.category = "La categoria es Obligatoria";
+    }
+
+    // 5. Validacion del Archivo/Imagen (Depende del fileRequired)
+    
+    if (fileRequired && !product.file){
+        errors.file ="Debes seleccionar una imagen";
+    }
+
+    return errors;
+};

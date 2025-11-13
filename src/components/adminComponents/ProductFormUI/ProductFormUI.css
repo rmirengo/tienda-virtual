@@ -1,0 +1,117 @@
+
+/* ---------------------------------- */
+/* 1. Estilo General del Formulario */
+/* ---------------------------------- */
+.product-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Espacio entre cada grupo de label/input */
+}
+
+/* Título (si lo quieres dentro del UI) */
+.product-form h2 {
+    color: #343a40;
+    margin-bottom: 20px;
+    font-size: 1.5em;
+    font-weight: 600;
+}
+
+/* Contenedor de cada campo (el <div>) */
+.product-form > div {
+    display: flex;
+    flex-direction: column;
+}
+
+/* ---------------------------------- */
+/* 2. Estilo de Etiquetas (Label) */
+/* ---------------------------------- */
+.product-form label {
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: #495057;
+    font-size: 0.95rem;
+}
+
+/* ---------------------------------- */
+/* 3. Estilo de Campos de Entrada (Input / Textarea) */
+/* ---------------------------------- */
+.product-form input:not([type="file"]),
+.product-form textarea {
+    padding: 10px 12px;
+    border: 1px solid #ced4da; /* Borde gris claro */
+    border-radius: 4px;
+    font-size: 1rem;
+    color: #495057;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    width: 100%; 
+    box-sizing: border-box; /* Asegura que padding no aumente el ancho */
+}
+
+/* Estilo al enfocar el campo */
+.product-form input:focus,
+.product-form textarea:focus {
+    border-color: #007bff; /* Color primario de enfoque (azul) */
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+    outline: none;
+}
+
+.product-form textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* ---------------------------------- */
+/* 4. Retroalimentación y Errores */
+/* ---------------------------------- */
+
+/* Mensajes de Error */
+.product-form .error {
+    color: #dc3545; /* Rojo fuerte para errores */
+    font-size: 0.85rem;
+    margin-top: 5px;
+    font-weight: 500;
+}
+
+/* Opcional: Para resaltar el campo con error */
+.product-form input.input-error,
+.product-form textarea.input-error {
+    border-color: #dc3545 !important;
+}
+
+/* ---------------------------------- */
+/* 5. Botón de Enviar (clase .btn) */
+/* ---------------------------------- */
+.product-form .btn {
+    padding: 12px 25px;
+    background-color: #28a745; /* Verde para 'Guardar' */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-top: 20px;
+    transition: background-color 0.2s, opacity 0.2s;
+}
+
+/* Efecto al pasar el mouse */
+.product-form .btn:hover:not(:disabled) {
+    background-color: #218838;
+}
+
+/* Estilo cuando el botón está deshabilitado (cargando) */
+.product-form .btn:disabled {
+    background-color: #6c757d; 
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+/* ---------------------------------- */
+/* 6. Estilo para el Campo de Archivo (Input type="file") */
+/* ---------------------------------- */
+.product-form input[type="file"] {
+    border: 1px dashed #ced4da; /* Borde punteado para indicar un área de carga */
+    padding: 10px;
+    background-color: #f8f9fa;
+    border-radius: 4px;
+}

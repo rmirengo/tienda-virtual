@@ -1,4 +1,4 @@
-import {useState} from "react"
+import { useState } from "react"
 import { useAuthContext} from "../../context/AuthContext/useAuthContext";
 import { Navigate, useNavigate } from "react-router-dom";
 
@@ -17,7 +17,7 @@ export const Login = () => {
         setUserForm({...userForm, [name]:value});
     };
     
-    const handleSubmit = (e => {
+    const handleSubmit = (e) => {
         e.preventDefault();
         const success = login(userForm.name, userForm.password);
 
@@ -25,11 +25,11 @@ export const Login = () => {
             navigate("/admin/alta-productos")
         }else{
             alert("Las credenciales son incorrectas! NO PASARAS!");
-            setUserForm
+            setUserForm({name: "", password: ""})
         }
-});
+};
 
-    return <form>
+    return <form onSubmit={handleSubmit}>
         <h2>Iniciar Sesion</h2>
         <div>
             <label htmlFor="">Usuario:</label>
@@ -49,6 +49,6 @@ export const Login = () => {
             onChange={handleChange} 
             />        
         </div>
-        <button type="submit">Entrar</button>
+        <button type="submit">Inciar sesión</button>
     </form>
 }

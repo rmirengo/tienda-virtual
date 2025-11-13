@@ -1,10 +1,11 @@
 const BASE_URL = 'https://6900bc6aff8d792314bb39bc.mockapi.io/products';
 
-const createProduct = async (product) => {
-    // Lógica para crear un producto
+/// Lógica para crear un producto
+
+export const createProduct = async (product) => {    
     const res = await fetch(BASE_URL, {
         method: 'POST',
-        headers: { "content-type": "application/json" },
+        headers: { "content-type" : "application/json" },
         body: JSON.stringify(product)
     });
     
@@ -17,14 +18,64 @@ const createProduct = async (product) => {
 
 };
 
-export const getProducts = async(category) =>{
-    url = `${BASE_URL}?category=${category}`;
+// Logica para obtener productos
+
+export const getProducts = async(category) => {
+    let url = BASE_URL;
+    
+    if (category) {
+        url = `${BASE_URL}?category=${category}`;
 }
 
-const res = await fetch(url);
-if(!res.ok) {
+try {
+    const res = await fetch(url);
+    if(!res.ok) {
     throw new Error ("Error al listar productos");
+    }
+
+    const result = await res.json();
+    return result;
+} catch (error) {
+    console.error("Fallo en getProducts:",error)
+    throw error;
+}
 }
 
-const results = await res.json();
-return results;
+//Logica para obtener el detalle de producto por id
+
+export const getItem = async (id) => {
+    try {
+        const url = `${BASE_URL}/${id}`;
+        const res = await fetch(url);
+
+        if (!res.ok){
+            throw new Error (`Producto no encontrado o error en la petición. Código: ${res.status}`);
+        }
+        const result = await res.json();
+        return result;
+    } catch(error){
+        console.error("Fallo en getItem:", error)
+        throw error;
+    }
+};
+
+// Logica para tomar solo las categorias de mockapi
+
+export const getCategories = async() => {
+    try {
+        const allProducts = await getProducts();
+        
+        if (!allProducts || allProducts.lenght === 0) {
+            return [];
+        }
+
+        const categoriesArray = allProducts.map(prod => prod.category);
+
+        const uniqueCategories = [...new Set(categoriesArray)];
+
+        return uniqueCategories;
+    } catch (error){
+        console.error("Error al obtener categorias: ", error);
+        throw error;
+    }
+}

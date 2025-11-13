@@ -1,0 +1,56 @@
+/* ProductFormContainer.css */
+
+/*
+  Estilos para la sección principal del contenedor del formulario
+  (La etiqueta <section> en tu componente)
+*/
+.product-form-container {
+    /* Centra el contenedor principal en la pantalla (si se usa a nivel de página) */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 20px;
+    background-color: #f8f9fa; /* Un fondo muy claro */
+    min-height: 80vh; /* Asegura que ocupe una buena parte de la altura */
+}
+
+/* Título del formulario */
+.product-form-container h2 {
+    color: #343a40; /* Un color de texto oscuro */
+    margin-bottom: 25px;
+    font-size: 2em;
+    font-weight: 600;
+    border-bottom: 3px solid #007bff; /* Un subrayado para destacar */
+    padding-bottom: 5px;
+}
+
+/*
+  Estilos para el componente ProductFormUI (el formulario en sí)
+  Le damos un aspecto de 'tarjeta' flotante para que destaque.
+*/
+.product-form-ui-wrapper {
+    width: 100%;
+    max-width: 500px; /* Limita el ancho del formulario para mejor legibilidad */
+    padding: 30px;
+    background-color: #ffffff; /* Fondo blanco */
+    border-radius: 8px; /* Esquinas redondeadas */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sombra suave para efecto 3D */
+}
+
+
+/* Adaptación para pantallas más pequeñas (móviles) */
+@media (max-width: 600px) {
+    .product-form-container {
+        padding: 15px 10px;
+    }
+
+    .product-form-container h2 {
+        font-size: 1.5em;
+        text-align: center;
+    }
+
+    .product-form-ui-wrapper {
+        padding: 20px 15px;
+        box-shadow: none; /* Quitamos la sombra en móvil para un diseño full-width */
+    }
+}

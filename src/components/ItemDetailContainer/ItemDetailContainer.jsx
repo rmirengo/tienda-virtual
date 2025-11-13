@@ -2,39 +2,43 @@ import { useState, useEffect} from 'react'
 import { useParams } from 'react-router-dom';
 import { ItemDetail } from '../ItemDetail/ItemDetail';
 import './ItemDetailContainer.css';
+import { getItem } from '../../services/products';
 
 export const ItemDetailContainer = () => {
     const [detail, setDetail] = useState({});
-    
+    const [loading, setLoading] = useState(true);
     const { id } = useParams();
 
     useEffect(() =>{
-        fetch("/data/products.json")
-        .then((res)=>{
-            if (!res.ok) {
-                throw new Error ("No se encontro el producto");
-            }
-            return res.json();
-        })
+        setLoading(true);
+        setDetail(null);
+        
+        getItem(id)
         .then((data)=>{
-            const found = data.find(prod => String(prod.id) === String(id))
-            if (found) {
-                setDetail(found);
-            }else{
-                throw new Error (`Producto con id ${id} encontrado`);
+            if (data && data.id){
+                setDetail(data);
+            } else {
+                throw new Error (`Producto con id ${id} no encontrado en la API.`);
             }
         })
         .catch((err)=>{
             console.error(err);  
+        })
+        .finally(()=>{
+            setLoading(false);
         });
     },[id]);
 
     return (
     <main className='item-detail-container'>   
-        {Object.keys(detail).length ? (
+        {loading ? (
+            <p>Cargando detalle del producto</p>
+        ) : detail ? (
             <ItemDetail detail={detail} />
-        ) : (
-            <p>Cargando...</p>
+        ) : (<div>
+            <h2>¿A donde queres ir máquina?</h2>
+            <p>Error: Toda tu vida es un error.</p>
+            </div>
         )}
     </main> 
     );   
