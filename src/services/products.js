@@ -78,3 +78,36 @@ export const getCategories = async() => {
         throw error;
     }
 }
+// Logica para actualizar productos
+export const updateProduct = async (id, updatedProductData) => {
+    const url = `${BASE_URL}/${id}`;
+
+    const res = await fetch (url, {
+        method: 'PUT', // SE USA EL METODO PUT PARA ACTUALIZAR}
+        headers: { "content-type" : "application/json"},
+        body: JSON.stringify(updatedProductData)
+    });
+    if (!res.ok) {
+        throw new Error(`Error al actualizar el producto con ID: ${id}. Código: ${res.status} `);
+    }
+    const result = await res.json();
+    return result;
+};
+
+/// Logica para eliminar un producto
+
+export const deleteProduct = async (id) => {
+    const url = `${BASE_URL}/${id}`;
+
+    const res = await fetch(url, {
+        method: 'DELETE', //EL METODO DELETE PARA ELIMINAR PRODUCTOS
+    });
+
+    if (!res.ok) {
+        throw new Error(`Error al eliminar el producto con ID: ${id}. Código: ${res.status}`);
+    }
+
+    const result = await res.json();
+    return result;
+
+}

@@ -10,6 +10,9 @@ import { MainLayout} from "./layouts/MainLayout"
 import { AdminLayout } from "./layouts/AdminLayout"
 import { RutaProtegida } from "./components/RutaProtegida/RutaProtegida";
 import { Login } from "./components/Login/Login"
+import { ProductAdminList } from "./components/adminComponents/ProductAdminList/ProductAdminList";
+import { Toaster } from "react-hot-toast";
+import { ProductUpdateContainer } from "./components/adminComponents/ProductUpdateContainer/ProductUpdateContainer";
 
 function App() {  
 
@@ -32,9 +35,23 @@ function App() {
               <Route index element={<Login />}/>
               
               <Route 
+                path="productos" 
+                element={<RutaProtegida>
+                    <ProductAdminList/>
+                </RutaProtegida>
+              }
+              />
+              <Route 
                 path="alta-productos" 
                 element={<RutaProtegida>
                     <ProductFormContainer/>
+                </RutaProtegida>
+              }
+              />
+                <Route 
+                path="update/:id" 
+                element={<RutaProtegida>
+                    <ProductUpdateContainer/>
                 </RutaProtegida>
               }
               />
@@ -42,6 +59,7 @@ function App() {
           </Routes>
           <Footer />        
         </div>
+        <Toaster/>
         </CartProvider>
     </BrowserRouter>
     </>

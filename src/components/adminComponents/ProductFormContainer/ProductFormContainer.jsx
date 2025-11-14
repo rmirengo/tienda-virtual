@@ -61,6 +61,7 @@ export const ProductFormContainer = () => {
         <h2>Formulario de Producto</h2>
         <div className="product-form-ui-wrapper">
         <ProductFormUI 
+            initialData={{}}
             product={product} 
             errors={errors} 
             onChange={handleChange} 

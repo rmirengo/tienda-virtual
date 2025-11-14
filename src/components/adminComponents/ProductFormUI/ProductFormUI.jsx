@@ -1,7 +1,8 @@
 import "./ProductFormUI.css"
 
 export const ProductFormUI = ({
-    product, 
+    initialData={},
+    product={}, 
     errors, 
     loading, 
     onChange, 
@@ -17,7 +18,7 @@ export const ProductFormUI = ({
                     <input 
                         type="text" 
                         name="name" 
-                        value= {product.name} 
+                        value= {initialData.name || product.name || ""} 
                         onChange={onChange} 
                     />
                     {errors.name && <p className="error">{errors.name}</p>}
@@ -27,7 +28,7 @@ export const ProductFormUI = ({
                     <input 
                         type="number" 
                         name="price" 
-                        value={product.price} 
+                        value={initialData.price || product.price || 0} 
                         onChange={onChange} 
                     />
                     {errors.price && <p className="error">{errors.price}</p>}
@@ -37,7 +38,7 @@ export const ProductFormUI = ({
                     <input 
                         type="text" 
                         name="category" 
-                        value= {product.category} 
+                        value= {initialData.category || product.category || ""} 
                         onChange={onChange} 
                     />
                     {errors.category && <p className="error">{errors.category}</p>}
@@ -46,7 +47,7 @@ export const ProductFormUI = ({
                     <label>Descripcion: </label>
                     <textarea                         
                         name="description" 
-                        value= {product.description} 
+                        value= {initialData.description || product.description || ""} 
                         onChange={onChange} 
                     />
                     {errors.description && <p className="error">{errors.description}</p>}
