@@ -24,7 +24,7 @@ useEffect(() =>{
         setLoading(false);
     })
     
-},[category])
+},[category]);
 
     return (
         <section className="item-list-container">

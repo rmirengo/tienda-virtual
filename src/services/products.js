@@ -18,24 +18,23 @@ export const createProduct = async (product) => {
 
 };
 
-// Logica para obtener productos
+// Logica para obtener productos de mockapi
 
 export const getProducts = async(category) => {
-    let url = BASE_URL;
-    
+    let url = BASE_URL;  
+
     if (category) {
         url = `${BASE_URL}?category=${category}`;
 }
-
 try {
     const res = await fetch(url);
     if(!res.ok) {
     throw new Error ("Error al listar productos");
     }
-
     const result = await res.json();
     return result;
-} catch (error) {
+} 
+catch (error) {
     console.error("Fallo en getProducts:",error)
     throw error;
 }
