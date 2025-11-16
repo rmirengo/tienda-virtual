@@ -1,7 +1,7 @@
 import './Header.css';
 import { Link } from 'react-router-dom';
 
-const LOGO_PATH = 'images/tienda_logo.png'
+const LOGO_PATH = 'images/TechForge.png'
 function Header(){
     return(
         <header className="header">

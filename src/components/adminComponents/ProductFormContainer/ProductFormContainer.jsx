@@ -4,7 +4,7 @@ import { ValidateProduct } from "../../../utils/validateProducts";
 import { uploadToImgbb} from "../../../services/uploadImage";
 import { createProduct } from "../../../services/products";
 import "../ProductFormContainer/ProductFormContainer.css"
-
+import toast from "react-hot-toast";
 
 
 export const ProductFormContainer = () => {
@@ -44,7 +44,7 @@ export const ProductFormContainer = () => {
             };
 
             await createProduct(productData);
-                alert("Producto cargado con exito");
+                toast.success("Producto cargado con exito");
 
                 setProduct({name: "", price: "", category:"", description:""});
                 setFile(null);  
@@ -58,7 +58,7 @@ export const ProductFormContainer = () => {
 
     return (        
         <section className="product-form-container">
-        <h2>Formulario de Producto</h2>
+        <h2>Agregar nuevos productos</h2>
         <div className="product-form-ui-wrapper">
         <ProductFormUI 
             initialData={{}}

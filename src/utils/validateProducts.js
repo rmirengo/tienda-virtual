@@ -29,7 +29,7 @@ export const ValidateProduct = (product, fileRequired=true) => {
 
     // 5. Validacion del Archivo/Imagen (Depende del fileRequired)
     
-    if (fileRequired && !product.file){
+    if (fileRequired && !product.file && !product.imageUrl){
         errors.file ="Debes seleccionar una imagen";
     }
 

@@ -1,30 +1,34 @@
+/* ================================================= */
+/* BLOQUE: FORMULARIO DE PRODUCTO (.product-form) */
+/* ================================================= */
 
-/* ---------------------------------- */
 /* 1. Estilo General del Formulario */
-/* ---------------------------------- */
 .product-form {
     display: flex;
     flex-direction: column;
     gap: 15px; /* Espacio entre cada grupo de label/input */
 }
 
-/* Título (si lo quieres dentro del UI) */
-.product-form h2 {
+/* Título */
+.product-form__title { /* Clase nueva para el título (h2) */
     color: #343a40;
     margin-bottom: 20px;
     font-size: 1.5em;
     font-weight: 600;
 }
 
-/* Contenedor de cada campo (el <div>) */
-.product-form > div {
+/* Contenedor de cada campo (Elemento: __field-group) */
+.product-form__field-group {
     display: flex;
     flex-direction: column;
 }
 
+
 /* ---------------------------------- */
-/* 2. Estilo de Etiquetas (Label) */
+/* 2. Elementos del Campo (LABEL, INPUT, TEXTAREA) */
 /* ---------------------------------- */
+
+/* Etiqueta (Label) */
 .product-form label {
     margin-bottom: 5px;
     font-weight: 600;
@@ -32,9 +36,7 @@
     font-size: 0.95rem;
 }
 
-/* ---------------------------------- */
-/* 3. Estilo de Campos de Entrada (Input / Textarea) */
-/* ---------------------------------- */
+/* Campos de Entrada (Input / Textarea - General) */
 .product-form input:not([type="file"]),
 .product-form textarea {
     padding: 10px 12px;
@@ -55,63 +57,93 @@
     outline: none;
 }
 
+/* Textarea específico */
 .product-form textarea {
     resize: vertical;
     min-height: 100px;
 }
 
+/* Estilo para el Campo de Archivo (Input type="file") */
+.product-form input[type="file"] {
+    border: 1px dashed #ced4da; /* Borde punteado para indicar un área de carga */
+    padding: 10px;
+    background-color: #f8f9fa;
+    border-radius: 4px;
+}
+
+
 /* ---------------------------------- */
-/* 4. Retroalimentación y Errores */
+/* 3. Retroalimentación y Errores */
 /* ---------------------------------- */
 
-/* Mensajes de Error */
-.product-form .error {
+/* Mensajes de Error (Elemento: __error-message) */
+.product-form__error-message { 
     color: #dc3545; /* Rojo fuerte para errores */
     font-size: 0.85rem;
     margin-top: 5px;
     font-weight: 500;
 }
 
-/* Opcional: Para resaltar el campo con error */
-.product-form input.input-error,
-.product-form textarea.input-error {
+/* Opcional: Para resaltar el campo con error (Modificador: --error) */
+.product-form input.input--error,
+.product-form textarea.input--error {
     border-color: #dc3545 !important;
 }
 
+
 /* ---------------------------------- */
-/* 5. Botón de Enviar (clase .btn) */
+/* 4. Acciones y Botones */
 /* ---------------------------------- */
-.product-form .btn {
+
+/* Contenedor de los botones de acción */
+.form-actions {
+    display: flex;
+    justify-content: space-between; /* Separa los botones a los extremos */
+    align-items: center; 
+    margin-top: 25px; 
+}
+
+/* Estilo Base para los Botones del Formulario */
+.form-btn {
     padding: 12px 25px;
-    background-color: #28a745; /* Verde para 'Guardar' */
     color: white;
     border: none;
     border-radius: 4px;
     cursor: pointer;
     font-size: 1.1rem;
     font-weight: 600;
-    margin-top: 20px;
     transition: background-color 0.2s, opacity 0.2s;
+    /* Para manejar enlaces/botones dentro del flex container */
+    display: inline-block; 
+    line-height: 1; 
 }
 
-/* Efecto al pasar el mouse */
-.product-form .btn:hover:not(:disabled) {
+/* Botón de Enviar (SUBMIT - antes .btn) */
+.form-btn-submit { 
+    background-color: #28a745; /* Verde para 'Guardar' */
+    /* Hereda .form-btn */
+}
+
+/* Botón de Cancelar/Volver */
+.form-btn-cancel {
+    background-color: #6c757d; /* Gris para cancelar */
+    text-decoration: none; /* Quitar subrayado si es un enlace */
+    /* Hereda .form-btn */
+}
+
+/* Efecto al pasar el mouse (Enviar) */
+.form-btn-submit:hover:not(:disabled) {
     background-color: #218838;
 }
 
+/* Efecto al pasar el mouse (Cancelar) */
+.form-btn-cancel:hover {
+    background-color: #5a6268;
+}
+
 /* Estilo cuando el botón está deshabilitado (cargando) */
-.product-form .btn:disabled {
+.form-btn-submit:disabled {
     background-color: #6c757d; 
     cursor: not-allowed;
     opacity: 0.6;
-}
-
-/* ---------------------------------- */
-/* 6. Estilo para el Campo de Archivo (Input type="file") */
-/* ---------------------------------- */
-.product-form input[type="file"] {
-    border: 1px dashed #ced4da; /* Borde punteado para indicar un área de carga */
-    padding: 10px;
-    background-color: #f8f9fa;
-    border-radius: 4px;
 }

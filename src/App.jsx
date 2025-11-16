@@ -13,6 +13,7 @@ import { Login } from "./components/Login/Login"
 import { ProductAdminList } from "./components/adminComponents/ProductAdminList/ProductAdminList";
 import { Toaster } from "react-hot-toast";
 import { ProductUpdateContainer } from "./components/adminComponents/ProductUpdateContainer/ProductUpdateContainer";
+import  ContactUs from "./components/ContactUs/ContactUs"
 
 function App() {  
 
@@ -24,7 +25,7 @@ function App() {
           <Routes>
             <Route element={<MainLayout />}>
               <Route path="/" element={<h1>HOME SWEET HOME</h1>}/>
-              <Route path="/contacto" element={<h1>LLAMAME Y CONTAME</h1>}/>
+              <Route path="/contacto" element={<ContactUs />}/>
               <Route path="/productos" element={<ItemListContainer titulo="Nuestros Productos"/>}/>
               <Route path="/category/:category" element={<ItemListContainer titulo="{category}" />}/>
               <Route path="/detail/:id" element={<ItemDetailContainer/>}/>

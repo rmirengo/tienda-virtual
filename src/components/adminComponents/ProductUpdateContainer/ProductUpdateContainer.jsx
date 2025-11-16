@@ -95,16 +95,21 @@ export const ProductUpdateContainer = ()=> {
             return <p>Producto no encontrado o error de carga.</p>
         }
         return (
-            <ProductFormUI 
-            initialData={productData}
-            product={productData}
-            errors={errors}
-            loading={loading}
-            onChange={handleChange}
-            onFileChange={setFile}
-            onSubmit={handleSubmit}
-            isEditing={true}
-            />
+            <section className="product-form-container">
+                <h2>Editar Producto</h2>
+                <div className="product-form-ui-wrapper">
+                    <ProductFormUI 
+                        initialData={productData}
+                        product={productData}
+                        errors={errors}
+                        loading={loading}
+                        onChange={handleChange}
+                        onFileChange={setFile}
+                        onSubmit={handleSubmit}
+                        isEditing={true}
+                    />
+                </div>
+            </section>
         );
     
 

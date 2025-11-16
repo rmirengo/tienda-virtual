@@ -12,7 +12,7 @@ export const ItemList = ({list}) => {
                 </Link>
                 ))
             ) : (
-                <p>Esto está vacío</p>
+                <p>No hay nada para mostrar</p>
             )}
         </div>
     );

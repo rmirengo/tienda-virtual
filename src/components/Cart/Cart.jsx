@@ -39,7 +39,7 @@ return (<section className="item-list-container">
             </div>
             ) : (
             <Link className="btn btn-primary" to="/productos">
-                Volver al inicio
+                Volver a la tienda
             </Link>
         )}
     </section>
