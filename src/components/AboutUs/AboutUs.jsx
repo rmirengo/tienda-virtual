@@ -2,6 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 function AboutUs(){
+
+    const TEAM_PATH = 'images/Team.png'
     
 return(
     <>
@@ -17,7 +19,7 @@ return(
                 </Link>
             </div>
                 <div className="about-image">
-                    <img src="/public/images/Team.png" alt="Equipo de TechForge - HardCore PC" />
+                    <img src={TEAM_PATH} alt="Equipo de TechForge - HardCore PC" />
                 </div>
             </div>
     </>
