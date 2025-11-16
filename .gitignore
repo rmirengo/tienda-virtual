@@ -27,3 +27,4 @@ dist-ssr
 public/images/*
 !public/images/
 !public/images/TechForge.png
+!public/images/Team.png
