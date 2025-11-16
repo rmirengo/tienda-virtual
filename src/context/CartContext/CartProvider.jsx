@@ -4,37 +4,98 @@ import { CartContext } from "./CartContext";
 export const CartProvider = ({children}) => {
     const [cart, setCart] = useState([]);    
 
+//Cambiamos la logica de las funciones SI usamos el Count para agregar "cantidad"
+
+
+
     const exists = (id) => {
         const exist = cart.some((p) => p.id === id);
         return exist;
     };
 
-    const addItem = (Item) => {        
-        if (exists(Item.id)) {
-            alert("El producto ya está en el carrito");
-            return;
-        }
+    /*------------------------------------------------- */
+    /*            Agregamos map y spread                */
+    /*------------------------------------------------- */
 
-        setCart([...cart, Item]);
-        alert(`${Item.name} agregado al carrito`);
+    const addItem = (item) => {        
+        if (exists(item.id)) {
+            //map, cuido mutacion a nivel del array
+            const updatedCart = cart.map((prod)=>{
+                if (prod.id === item.id){
+                    //cuido mutacion a nivel de objeto
+                    return{...prod, quantity: prod.quantity + item.quantity};
+                }else{
+                    return prod;
+                }
+            });
+            setCart(updatedCart);
+            alert("Agregado al Carrito");           
+        }else {
+            setCart([...cart,item]);
+            alert(`${item.name} agregado`);
+        }        
     };
 
- 
+    /*------------------------------------------------- */
+    /*         Eliminar un producto con filter          */
+    /*------------------------------------------------- */
+    const deleteItem = (id) => {
+        const filtered = cart.filter((p)=> p.id !== id)
+        setCart(filtered);
+        alert("Producto eliminado");
+    };
+
+    /*------------------------------------------------- */
+    /*                  Vaciar Carrito                  */
+    /*------------------------------------------------- */
+    
     const clearCart = () => {
         setCart([]);
     };
 
+    /*------------------------------------------------- */
+    /*      Calcular total de items en el carrito       */
+    /*------------------------------------------------- */
+
+
     const getTotalItems = () => {
-        if (cart.length){
-            return cart.length;
+        // if (cart.length){
+        //     return cart.length;
+        // }
+
+        const totalItems = cart.reduce((acc, p) => acc + p.quantity,0)
+        return totalItems;
+    };
+    
+    /*------------------------------------------------- */
+    /*                  Calcular Total                  */
+    /*------------------------------------------------- */
+    
+    const total = ()=>{
+        const total = cart.reduce((acc, p) => acc + p.price * p.quantity,0)
+
+        return Math.round(total * 100) / 100;
+    }
+
+    const checkout = ()=> {
+        const ok = confirm("¿Seguro que quiere finalizar la compra?")
+
+        if(ok){
+            alert("¡Gracias, vuelva prontos!");
+            clearCart();
         }
     };
 
+
+    console.log(cart);
     const values = { 
         cart, 
         addItem, 
         clearCart, 
         getTotalItems,
+        deleteItem,
+        total,
+        checkout
     };
         
         return <CartContext.Provider value={values}>{children}</CartContext.Provider>;

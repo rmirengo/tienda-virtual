@@ -1,12 +1,19 @@
 import {BrowserRouter, Routes, Route} from "react-router-dom";
-import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
-import { Nav } from './components/Nav/Nav';
 import { ItemListContainer } from './components/ItemListContainer/ItemListContainer';
 import { ItemDetailContainer } from './components/ItemDetailContainer/ItemDetailContainer';
 import './App.css';
 import { CartProvider } from "./context/CartContext/CartProvider";
-
+import { Cart } from "./components/Cart/Cart";
+import { ProductFormContainer } from "./components/adminComponents/ProductFormContainer/ProductFormContainer";
+import { MainLayout} from "./layouts/MainLayout"
+import { AdminLayout } from "./layouts/AdminLayout"
+import { RutaProtegida } from "./components/RutaProtegida/RutaProtegida";
+import { Login } from "./components/Login/Login"
+import { ProductAdminList } from "./components/adminComponents/ProductAdminList/ProductAdminList";
+import { Toaster } from "react-hot-toast";
+import { ProductUpdateContainer } from "./components/adminComponents/ProductUpdateContainer/ProductUpdateContainer";
+import  ContactUs from "./components/ContactUs/ContactUs"
 
 function App() {  
 
@@ -14,15 +21,46 @@ function App() {
     <>
    <BrowserRouter>
     <CartProvider>
-        <div className='app-container'>
-          <Header />          
-          <Nav />
+        <div className='app-container'>               
           <Routes>
-            <Route path="/" element={<ItemListContainer />}/>
-            <Route path="/detail/:id" element={<ItemDetailContainer/>}/>
+            <Route element={<MainLayout />}>
+              <Route path="/" element={<h1>HOME SWEET HOME</h1>}/>
+              <Route path="/contacto" element={<ContactUs />}/>
+              <Route path="/productos" element={<ItemListContainer titulo="Nuestros Productos"/>}/>
+              <Route path="/category/:category" element={<ItemListContainer titulo="{category}" />}/>
+              <Route path="/detail/:id" element={<ItemDetailContainer/>}/>
+              <Route path="/carrito" element={<Cart />}/>
+            </Route>
+            {/* Aca estan las rutas para el administrador ojo con eso ¡Seguramente rompas todo! */}
+            <Route path="/admin" element={<AdminLayout />}>            
+              <Route index element={<Login />}/>
+              
+              <Route 
+                path="productos" 
+                element={<RutaProtegida>
+                    <ProductAdminList/>
+                </RutaProtegida>
+              }
+              />
+              <Route 
+                path="alta-productos" 
+                element={<RutaProtegida>
+                    <ProductFormContainer/>
+                </RutaProtegida>
+              }
+              />
+                <Route 
+                path="update/:id" 
+                element={<RutaProtegida>
+                    <ProductUpdateContainer/>
+                </RutaProtegida>
+              }
+              />
+              </Route>     
           </Routes>
           <Footer />        
         </div>
+        <Toaster/>
         </CartProvider>
     </BrowserRouter>
     </>

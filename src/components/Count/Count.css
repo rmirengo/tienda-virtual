@@ -1,0 +1,43 @@
+.count-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.count-container button {
+    padding: 0.5rem 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.count-container button:hover {
+    background-color: #e0e0e0;
+}
+
+.count-container .count-value {
+    font-size: 1.2rem;
+    min-width: 2rem;
+    text-align: center;
+}
+
+.count-container .confirm-button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.count-container .confirm-button:hover {
+    background-color: #45a049;
+}
+
+.count-container .confirm-button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}

@@ -1,10 +1,13 @@
 /* Estilos del contenedor principal del header */
 .header {
     width: 100%;
-    background-color: #333;
+    /* Color de fondo acorde al Nav */
+    background-color: #2c3e50; 
     color: white;
-    padding: 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    /* Reducimos el padding para hacerlo más compacto */
+    padding: 15px 20px; 
+    /* Sombra más sutil y moderna */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.25);
     
     /* 1. Habilita Flexbox */
     display: flex;
@@ -18,28 +21,33 @@
 
 /* Estilos para el logo (la imagen) */
 .header__logo {
-    height: 200px; 
+    /* Altura ajustada a 80px */
+    height: 150px; 
     width: auto; 
     /* Agregamos el margen a la derecha para separarlo del texto */
-    margin-right: 20px; 
-    flex-shrink: 0; /* Evita que el logo se haga más pequeño */
+    margin-right: 25px; 
+    flex-shrink: 0; 
+    border-radius: 5px; 
 }
 
-/* 🏆 Estilos para el NUEVO contenedor de texto */
+/* Estilos para el contenedor de texto */
 .header__text-container {
     /* El contenedor ocupará el espacio restante a la derecha del logo */
     flex-grow: 1; 
-    /* Por defecto, los hijos (h1 y p) se apilan, logrando tu objetivo. */
 }
 
 /* Estilos del texto interno */
 .header h1 {
-    font-size: 1.8em;
+    /* Color claro */
+    color: #ecf0f1; 
+    font-size: 1.5em; 
     margin: 0; 
 }
 
 .header p {
-    font-size: 1em;
+    /* Color gris claro para la descripción */
+    color: #bdc3c7; 
+    font-size: 0.9em; 
     margin: 5px 0 0 0; /* Espacio entre H1 y P */
 }
 
@@ -56,15 +64,15 @@
     .header__logo {
         margin-right: 0;
         margin-bottom: 10px; 
-        height: 40px; 
+        height: 250px; /* Tamaño ajustado para móvil */
     }
 
     .header__text-container {
         /* Centra el contenedor de texto en el modo apilado */
-        align-items: center;
+        text-align: center;
     }
 
     .header h1 {
-        font-size: 1.4em;
+        font-size: 1.2em;
     }
 }

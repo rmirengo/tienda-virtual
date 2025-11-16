@@ -1,0 +1,74 @@
+import { useState } from "react";
+import { ProductFormUI } from "../ProductFormUI/ProductFormUI";
+import { ValidateProduct } from "../../../utils/validateProducts";
+import { uploadToImgbb} from "../../../services/uploadImage";
+import { createProduct } from "../../../services/products";
+import "../ProductFormContainer/ProductFormContainer.css"
+import toast from "react-hot-toast";
+
+
+export const ProductFormContainer = () => {
+    const [loading, setLoading] = useState();
+    const [errors, setErrors] = useState({});
+    const [file, setFile] = useState(null);
+    const [product, setProduct] = useState({
+        name: "",
+        price: "",
+        category: "",
+        description: "",
+    });
+
+    const handleChange = (e) => {
+        const { name, value } = e.target
+        setProduct({ ...product, [name]: value });
+    };
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        setErrors({});
+        setLoading (true);
+
+        const newErrors = ValidateProduct({...product, file});
+        if (Object.keys(newErrors).length > 0) {
+            setErrors(newErrors);
+            setLoading(false);
+            return;
+        }
+
+        try{
+            const imageUrl = await uploadToImgbb(file)
+            const productData = {
+                ...product, 
+                price: Number(product.price),
+                imageUrl,
+            };
+
+            await createProduct(productData);
+                toast.success("Producto cargado con exito");
+
+                setProduct({name: "", price: "", category:"", description:""});
+                setFile(null);  
+
+        } catch (error) {
+                setErrors({general: error.message});                
+        } finally {
+            setLoading(false);
+        }        
+    };
+
+    return (        
+        <section className="product-form-container">
+        <h2>Agregar nuevos productos</h2>
+        <div className="product-form-ui-wrapper">
+        <ProductFormUI 
+            initialData={{}}
+            product={product} 
+            errors={errors} 
+            onChange={handleChange} 
+            onFileChange={setFile}
+            loading={loading} 
+            onSubmit={handleSubmit}/>
+        </div>
+    </section>
+    );
+}

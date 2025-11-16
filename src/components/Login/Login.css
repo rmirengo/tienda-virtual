@@ -1,0 +1,102 @@
+/* ------------------------------------- */
+/* 1. Estilos del Contenedor de la Página */
+/* ------------------------------------- */
+.login-page-container {
+    display: flex;
+    justify-content: center; /* Centrado horizontal */
+    align-items: center; /* Centrado vertical */
+    min-height: 80vh; /* Ocupa casi toda la altura visible */
+    padding: 20px;
+    background-color: #f4f4f4; /* Fondo claro para contraste */
+}
+
+/* ------------------------------------- */
+/* 2. Estilos del Formulario Principal */
+/* ------------------------------------- */
+.login-form {
+    background-color: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15); /* Sombra suave */
+    width: 100%;
+    max-width: 400px; /* Ancho máximo para el formulario */
+    display: flex;
+    flex-direction: column;
+}
+
+.form-title {
+    font-size: 2em;
+    color: #2c3e50; /* Color oscuro unificado */
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* ------------------------------------- */
+/* 2.5. Estilos del Subtítulo (h3) */
+/* ------------------------------------- */
+.form-subtitle {
+    font-size: 1.1em; /* Más pequeño que el h2 */
+    font-weight: 500;
+    color: #7f8c8d; /* Color gris suave para subtítulo */
+    text-align: center;
+    margin-top: -20px; /* Acércalo un poco al h2 */
+    margin-bottom: 25px; /* Sepáralo de los inputs */
+}
+
+/* ------------------------------------- */
+/* 3. Estilos de Grupos y Etiquetas (Labels) */
+/* ------------------------------------- */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-label {
+    display: block; /* Ocupa todo el ancho */
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #555;
+    font-size: 0.95em;
+}
+
+/* ------------------------------------- */
+/* 4. Estilos de los Campos de Entrada (Input) */
+/* ------------------------------------- */
+.form-input {
+    width: 100%;
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-input:focus {
+    border-color: #3498db; /* Borde de acento al hacer foco */
+    outline: none; /* Quita el contorno por defecto del navegador */
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+}
+
+/* ------------------------------------- */
+/* 5. Estilos del Botón de Enviar (Submit) */
+/* ------------------------------------- */
+.submit-button {
+    background-color: #2c3e50; /* Color principal oscuro */
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+    margin-top: 10px;
+}
+
+.submit-button:hover {
+    background-color: #3498db; /* Color de acento al hacer hover */
+    transform: translateY(-1px);
+}
+
+.submit-button:active {
+    transform: translateY(0);
+}
