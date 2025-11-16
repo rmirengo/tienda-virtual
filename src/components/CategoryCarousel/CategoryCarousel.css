@@ -1,0 +1,64 @@
+/* --- Contenedor de la Sección --- */
+.category-carousel-section {
+    margin-bottom: 40px;
+    padding: 0 0 20px 0;
+    /* Optional: Añade un separador visual entre carruseles */
+    border-bottom: 1px solid #f0f0f0; 
+}
+
+/* --- Encabezado y Link --- */
+.carousel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 20px 15px 20px; /* Margen horizontal para alinearse con el resto del contenido */
+}
+
+.carousel-header h3 {
+    margin: 0;
+    font-size: 1.6em;
+    color: #333;
+}
+
+.view-more-link {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: 600;
+    font-size: 1em;
+    transition: color 0.2s;
+}
+
+.view-more-link:hover {
+    color: #0056b3;
+}
+
+/* --- El Corazón del Carrusel (El Wrapper) --- */
+.carousel-wrapper {
+    /* 1. Usar Flexbox para alinear los ítems horizontalmente */
+    display: flex;
+    
+    /* 2. Permite que los ítems FEATUREDITEMCARD no se envuelvan a la siguiente línea */
+    flex-wrap: nowrap; 
+    
+    /* 3. CLAVE: Permite el desplazamiento horizontal cuando el contenido desborda */
+    overflow-x: auto; 
+    
+    /* 4. Mejora la experiencia en dispositivos táctiles */
+    -webkit-overflow-scrolling: touch; 
+    
+    /* 5. Añade espacio horizontal para la apariencia del carrusel */
+    padding: 0 10px; 
+    
+    /* 6. Alineación vertical (opcional, pero útil) */
+    align-items: stretch;
+}
+
+/* Opcional: Ocultar la barra de desplazamiento */
+.carousel-wrapper::-webkit-scrollbar {
+    height: 5px; /* Define la altura de la barra para navegadores basados en Webkit (Chrome, Safari) */
+}
+
+.carousel-wrapper::-webkit-scrollbar-thumb {
+    background: #ccc; 
+    border-radius: 10px;
+}

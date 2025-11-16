@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { CartContext } from "./CartContext";
+import toast from "react-hot-toast";
 
 export const CartProvider = ({children}) => {
     const [cart, setCart] = useState([]);    
@@ -29,10 +30,10 @@ export const CartProvider = ({children}) => {
                 }
             });
             setCart(updatedCart);
-            alert("Agregado al Carrito");           
+            toast.success("Agregado al Carrito");           
         }else {
             setCart([...cart,item]);
-            alert(`${item.name} agregado`);
+            toast.success(`${item.name} agregado`);
         }        
     };
 
@@ -42,7 +43,7 @@ export const CartProvider = ({children}) => {
     const deleteItem = (id) => {
         const filtered = cart.filter((p)=> p.id !== id)
         setCart(filtered);
-        alert("Producto eliminado");
+        toast.success(`"Producto ${item.name} eliminado con éxito"`);
     };
 
     /*------------------------------------------------- */

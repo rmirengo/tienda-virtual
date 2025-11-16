@@ -1,0 +1,66 @@
+/* Contenedor principal de la tarjeta, actúa como el enlace */
+.featured-item-card {
+    display: flex;
+    flex-direction: column;
+    /* Ancho fijo para asegurar que quepan varias en el carrusel */
+    width: 200px; 
+    min-width: 200px; /* Evita que se encoja en pantallas pequeñas */
+    margin: 10px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    background-color: #ffffff;
+    text-decoration: none; /* Elimina el subrayado del enlace */
+    color: #333; /* Color de texto base */
+    overflow: hidden; /* Oculta cualquier desbordamiento de bordes */
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+/* Efecto hover sutil para indicar interactividad */
+.featured-item-card:hover {
+    transform: translateY(-3px); /* Pequeño levantamiento */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* --- Contenedor de la Imagen --- */
+.card-image-container {
+    /* Altura fija para que todas las imágenes sean consistentes */
+    height: 140px; 
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f8f8f8; /* Fondo claro para imágenes transparentes */
+}
+
+.product-image {
+    width: 100%;
+    height: 100%;
+    /* Asegura que la imagen cubra el contenedor sin distorsionarse */
+    object-fit: contain; 
+    padding: 10px; /* Pequeño padding para que no se pegue al borde */
+}
+
+/* --- Información del Producto --- */
+.card-info {
+    padding: 10px;
+    text-align: center;
+    flex-grow: 1; /* Permite que la información crezca si es necesario */
+}
+
+.card-name {
+    font-size: 1em;
+    font-weight: 600;
+    margin: 0 0 5px 0;
+    /* Manejo de texto largo en una sola línea */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; 
+}
+
+.card-price {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #007bff; /* Color primario para resaltar el precio */
+    margin: 0;
+}

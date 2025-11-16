@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 // Importar Link desde react-router-dom para navegación interna
-import { Link, NavLink } from 'react-router-dom'; 
+import { Link, NavLink, useLocation } from 'react-router-dom'; 
 import { useCartContext } from '../../context/CartContext/useCartContext';
 import './Nav.css';
 import { getCategories } from '../../services/products';
@@ -10,6 +10,7 @@ export const Nav = () => {
     const [categories, setCategories] = useState([]);
     const [loading, setLoading] = useState(true);
     const [isSubmenuOpen, setIsSubmenuOpen] = useState(false);
+    const location = useLocation();
 
     useEffect(() => {
         getCategories()
@@ -26,11 +27,16 @@ export const Nav = () => {
 
     },[]);
 
-   const toggleSubmenu = (e) =>{
-        // SOLO si la pantalla es <= 768px, previene la navegación y abre/cierra el submenú
+    useEffect(()=>{
+        if (isSubmenuOpen){
+            setIsSubmenuOpen(false);
+        }
+    }, [location.pathname])
+
+   const toggleSubmenu = (e) => {        
         if(window.innerWidth <= 768){
             if(isSubmenuOpen){
-            e.preventDefault(); 
+                e.preventDefault(); 
             }
             e.stopPropagation();
             setIsSubmenuOpen(prev => !prev);

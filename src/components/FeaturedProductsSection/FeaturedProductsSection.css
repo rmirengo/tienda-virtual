@@ -1,0 +1,37 @@
+/* --- Contenedor Principal de la Sección Destacada --- */
+.featured-section {
+    padding: 40px 0; /* Espaciado superior e inferior */
+    background-color: #f7f7f7; /* Un fondo ligeramente gris para destacarse del Home */
+}
+
+/* Título principal de la sección */
+.featured-section h2 {
+    text-align: center;
+    font-size: 2.2em;
+    color: #1a1a1a;
+    margin-bottom: 30px;
+    padding-bottom: 10px;
+    /* Línea sutil debajo del título */
+    border-bottom: 2px solid #e0e0e0;
+    width: 90%;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Contenedor de todos los carruseles (donde irán las filas) */
+.category-preview-carousels {
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+    max-width: 1300px;
+    margin: 0 auto; /* Centrar el contenido */
+}
+
+/* Estilos para los mensajes de estado (Cargando/Error) */
+.featured-section > p {
+    text-align: center;
+    font-size: 1.2em;
+    padding: 20px;
+    color: #555;
+}

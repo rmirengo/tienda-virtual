@@ -22,3 +22,8 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Carpeta de imagenes
+public/images/*
+!public/images/
+!public/images/TechForge.png

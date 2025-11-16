@@ -14,6 +14,7 @@ import { ProductAdminList } from "./components/adminComponents/ProductAdminList/
 import { Toaster } from "react-hot-toast";
 import { ProductUpdateContainer } from "./components/adminComponents/ProductUpdateContainer/ProductUpdateContainer";
 import  ContactUs from "./components/ContactUs/ContactUs"
+import Home from "./components/Home/Home";
 
 function App() {  
 
@@ -24,7 +25,7 @@ function App() {
         <div className='app-container'>               
           <Routes>
             <Route element={<MainLayout />}>
-              <Route path="/" element={<h1>HOME SWEET HOME</h1>}/>
+              <Route path="/" element={<Home/>}/>
               <Route path="/contacto" element={<ContactUs />}/>
               <Route path="/productos" element={<ItemListContainer titulo="Nuestros Productos"/>}/>
               <Route path="/category/:category" element={<ItemListContainer titulo="{category}" />}/>
